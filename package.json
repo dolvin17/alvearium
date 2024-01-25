@@ -1,0 +1,53 @@
+{
+  "name": "alvearium",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@ikscodes/prettier-config": "^2.2.0",
+    "@metamask/eth-sig-util": "^5.0.2",
+    "@openzeppelin/contracts": "^5.0.1",
+    "@types/node": "^16.18.12",
+    "@types/react": "^18.0.27",
+    "@types/react-dom": "^18.0.10",
+    "buffer": "^6.0.3",
+    "eslint-plugin-react-hooks": "^5.0.0-next-a8875eab7-20230310",
+    "magic-sdk": "^13.2.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "4.0.3",
+    "typescript": "^4.9.5",
+    "web3": "^1.8.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      "chrome >= 67",
+      "edge >= 79",
+      "firefox >= 68",
+      "opera >= 54",
+      "safari >= 14"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "engines": {
+    "node": "16.x"
+  },
+  "devDependencies": {
+    "hardhat": "^2.19.4"
+  }
+}
