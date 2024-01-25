@@ -190,7 +190,7 @@ ul {
 .connect-button:hover:enabled {
   background: #000;
   cursor: pointer;
-  color: #ffe600;
+  color: #ffff;
 }
 
 .connect-button:active:enabled {
@@ -358,7 +358,7 @@ ul {
 }
 
 .card {
-  width: 300px;
+  width: 1000px;
   margin: 0 auto 27px;
   display: flex;
   flex-direction: column;

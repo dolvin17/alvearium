@@ -14,7 +14,7 @@ export default function Home({ setAccount }: Props) {
     <div
       className="home-page"
       style={{
-        backgroundColor: '#E50085',
+        backgroundColor: '#ffffff',
       }}
     >
       <div>

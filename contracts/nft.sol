@@ -1,29 +1,26 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.19;
+pragma solidity ^0.8.2;
 
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 
+contract TestNft is ERC721, ERC721Enumerable, ERC721URIStorage {
+    uint256 private count = 0;
 
-contract TestNft is ERC721, ERC721Enumerable, ERC721URIStorage, Ownable {
-    uint256 public totalMinted;
+    constructor() ERC721("MagicTestNftCollection", "MTNC") {}
 
-    constructor() ERC721("TestNFT", "TNFT") {}
+    event NFTMinted(address indexed minter, uint256 indexed tokenId, string uri);
 
-	function mint(string memory uri) public returns (uint) {
-        totalMinted++;
-        uint256 newTokenId = totalMinted;
+    function mint(string memory uri) public returns (uint) {
+        count++;
+        uint256 newTokenId = count;
         _safeMint(msg.sender, newTokenId);
         _setTokenURI(newTokenId, uri);
 
         emit NFTMinted(msg.sender, newTokenId, uri);
 
         return newTokenId;
-    }
-
-	function transferNFT(address to, uint256 tokenId) public onlyOwner {
-        _transfer(owner(), to, tokenId);
     }
 
     function getNftsByAddress(address _owner) external view returns (uint[] memory) {
@@ -35,8 +32,6 @@ contract TestNft is ERC721, ERC721Enumerable, ERC721URIStorage, Ownable {
         return tokensId;
     }
 
-    event NFTMinted(address indexed minter, uint256 indexed tokenId, string uri);
-}
     // The following functions are overrides required by Solidity.
 
     function _beforeTokenTransfer(address from, address to, uint256 tokenId, uint256 batchSize)

@@ -31,7 +31,7 @@ const Login = ({ setAccount }: Props) => {
     <div
       className="login-page"
       style={{
-        backgroundColor: "#E50085"
+        backgroundColor: "#ffffff"
       }}
     >
       <AppHeader />
